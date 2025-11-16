@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours : Les Pourcentages - CAP AEPE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .cours-section {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .cours-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .cours-section h3 {
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .cours-section p {
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .cours-section ul {
+            margin-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .cours-section li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+
+        .cours-section strong {
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid white;
+        }
+
+        .formule-box {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid white;
+            text-align: center;
+        }
+
+        .formule-box p {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .conseil-box {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            color: white;
+        }
+
+        .conseil-box h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .conseil-box ul {
+            margin-left: 20px;
+        }
+
+        .conseil-box li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .reperes-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            color: white;
+        }
+
+        .reperes-box h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .reperes-box ul {
+            margin-left: 20px;
+        }
+
+        .reperes-box li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .btn-exercices {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-exercices:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-pdf {
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+            margin-right: 10px;
+        }
+
+        .btn-pdf:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .btn-exercices, .btn-pdf {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Les Pourcentages</h1>
+            <p>CAP Accompagnant Éducatif Petite Enfance - Rappel de cours</p>
+        </header>
+
+        <div class="content">
+            <!-- DÉFINITION -->
+            <div class="cours-section">
+                <h2>💡 Qu'est-ce qu'un pourcentage ?</h2>
+                <p>Un pourcentage (symbole : <strong>%</strong>) représente une <strong>part sur 100</strong>. C'est un outil mathématique qui permet d'exprimer des proportions de manière simple et universelle.</p>
+                
+                <div class="example-box">
+                    <strong>Exemple concret :</strong><br>
+                    Si 50 % des enfants sont présents, cela signifie que <strong>50 enfants sur 100</strong> sont là.<br>
+                    Si la crèche accueille 20 enfants, 50 % représente <strong>10 enfants</strong> (la moitié).
+                </div>
+
+                <h3>Applications en petite enfance :</h3>
+                <ul>
+                    <li>📊 Calculer les taux de présence ou d'absence</li>
+                    <li>🧪 Doser des produits d'entretien ou de désinfection</li>
+                    <li>🍽️ Gérer les stocks et prévoir les quantités de repas</li>
+                    <li>💰 Suivre les budgets et dépenses</li>
+                    <li>📈 Analyser les statistiques de satisfaction des parents</li>
+                    <li>📉 Calculer les variations (augmentation ou diminution)</li>
+                </ul>
+            </div>
+
+            <!-- REPÈRES ESSENTIELS -->
+            <div class="reperes-box">
+                <h3>🎯 Repères essentiels à connaître par cœur</h3>
+                <ul>
+                    <li><strong>100 %</strong> = la totalité, tout</li>
+                    <li><strong>50 %</strong> = la moitié (1/2)</li>
+                    <li><strong>25 %</strong> = le quart (1/4)</li>
+                    <li><strong>75 %</strong> = les trois quarts (3/4)</li>
+                    <li><strong>10 %</strong> = le dixième (1/10)</li>
+                    <li><strong>0 %</strong> = rien, aucun</li>
+                </ul>
+            </div>
+
+            <!-- CALCULER UN POURCENTAGE -->
+            <div class="cours-section">
+                <h2>🧮 Calculer un pourcentage d'une quantité</h2>
+                <p>Pour calculer un pourcentage d'une quantité, on utilise la formule suivante :</p>
+                
+                <div class="formule-box">
+                    <p>Quantité × Pourcentage ÷ 100</p>
+                    <p style="font-size: 0.9em; font-weight: normal; margin-top: 15px;">
+                        ou
+                    </p>
+                    <p>Quantité × (Pourcentage / 100)</p>
+                </div>
+
+                <div class="example-box">
+                    <strong>Exemple 1 :</strong> Calculer 20 % de 60 enfants<br>
+                    <strong>Méthode :</strong> 60 × 20 ÷ 100 = 1200 ÷ 100 = <strong>12 enfants</strong>
+                </div>
+
+                <div class="example-box">
+                    <strong>Exemple 2 :</strong> Une solution doit contenir 15 % de désinfectant pour 2 litres<br>
+                    <strong>Méthode :</strong> 2 × 15 ÷ 100 = 30 ÷ 100 = <strong>0,3 litre de désinfectant</strong>
+                </div>
+
+                <h3>Astuces pour les calculs rapides :</h3>
+                <ul>
+                    <li><strong>10 %</strong> : divise par 10 → 10 % de 80 = 80 ÷ 10 = 8</li>
+                    <li><strong>50 %</strong> : divise par 2 → 50 % de 80 = 80 ÷ 2 = 40</li>
+                    <li><strong>25 %</strong> : divise par 4 → 25 % de 80 = 80 ÷ 4 = 20</li>
+                    <li><strong>20 %</strong> : divise par 5 → 20 % de 80 = 80 ÷ 5 = 16</li>
+                </ul>
+            </div>
+
+            <!-- CALCULER LE RESTE -->
+            <div class="cours-section">
+                <h2>🔄 Calculer ce qui reste</h2>
+                <p>Quand on connaît un pourcentage utilisé, dépensé ou absent, on peut calculer ce qui reste :</p>
+                
+                <div class="formule-box">
+                    <p>Reste en % = 100 % - Pourcentage utilisé</p>
+                    <p style="margin-top: 15px;">Puis : Quantité × Reste en % ÷ 100</p>
+                </div>
+
+                <div class="example-box">
+                    <strong>Exemple :</strong> Budget de 500 €, dépensé 40 %<br>
+                    <strong>Étape 1 :</strong> Reste en % = 100 % - 40 % = 60 %<br>
+                    <strong>Étape 2 :</strong> 500 × 60 ÷ 100 = <strong>300 € restants</strong>
+                </div>
+            </div>
+
+            <!-- CALCULER UNE VARIATION -->
+            <div class="cours-section">
+                <h2>📈 Calculer un pourcentage d'augmentation ou de diminution</h2>
+                <p>Pour calculer une variation en pourcentage entre deux valeurs :</p>
+                
+                <div class="formule-box">
+                    <p>Variation = Valeur finale - Valeur initiale</p>
+                    <p style="margin-top: 10px;">Pourcentage = (Variation ÷ Valeur initiale) × 100</p>
+                </div>
+
+                <div class="example-box">
+                    <strong>Exemple 1 - Augmentation :</strong><br>
+                    Nombre d'enfants : 20 → 25<br>
+                    <strong>Variation :</strong> 25 - 20 = 5<br>
+                    <strong>Pourcentage :</strong> (5 ÷ 20) × 100 = 0,25 × 100 = <strong>+25 %</strong>
+                </div>
+
+                <div class="example-box">
+                    <strong>Exemple 2 - Diminution :</strong><br>
+                    Stock de couches : 200 → 170<br>
+                    <strong>Variation :</strong> 170 - 200 = -30<br>
+                    <strong>Pourcentage :</strong> (-30 ÷ 200) × 100 = -0,15 × 100 = <strong>-15 %</strong>
+                </div>
+            </div>
+
+            <!-- VARIATIONS SUCCESSIVES -->
+            <div class="cours-section">
+                <h2>🔁 Variations successives : ATTENTION !</h2>
+                <p><strong>Erreur fréquente :</strong> On ne peut PAS additionner directement les pourcentages de variations successives !</p>
+                
+                <div class="example-box">
+                    <strong>Exemple :</strong> Stock initial = 100 couches<br>
+                    <strong>Semaine 1 :</strong> -20 % → 100 - (100 × 20 ÷ 100) = 100 - 20 = <strong>80 couches</strong><br>
+                    <strong>Semaine 2 :</strong> -10 % → 80 - (80 × 10 ÷ 100) = 80 - 8 = <strong>72 couches</strong><br>
+                    <em>⚠️ La baisse totale n'est pas 30 %, mais 28 % (car on calcule sur des bases différentes)</em>
+                </div>
+
+                <p><strong>Méthode correcte :</strong> Calculer chaque variation l'une après l'autre en utilisant le nouveau résultat comme base.</p>
+            </div>
+
+            <!-- CONSEILS PRATIQUES -->
+            <div class="conseil-box">
+                <h3>💡 Conseils pour réussir</h3>
+                <ul>
+                    <li><strong>Identifie bien ce qu'on te demande :</strong> un pourcentage de quelque chose ? ce qui reste ? une variation ?</li>
+                    <li><strong>Repère la quantité totale</strong> (c'est la base de ton calcul)</li>
+                    <li><strong>Utilise les astuces</strong> pour les pourcentages simples (10 %, 50 %, 25 %...)</li>
+                    <li><strong>Vérifie la cohérence :</strong> 80 % de 20 ne peut pas faire 50 !</li>
+                    <li><strong>Pour les variations successives :</strong> calcule étape par étape, ne pas additionner les %</li>
+                    <li><strong>Pense aux unités :</strong> enfants, litres, euros... mentionne-les dans ta réponse</li>
+                    <li><strong>Arrondis intelligemment :</strong> en contexte professionnel, on ne peut pas avoir 12,7 enfants → arrondis à 13</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>💡 Maintenant que tu as revu le cours, entraîne-toi avec les exercices !</p>
+            <p>Bon courage ! 🌟</p>
+            <button onclick="window.print()" class="btn-pdf">📄 Télécharger en PDF</button>
+            <button onclick="window.location.href='https://luciole1990.github.io/les_pourcentages'" class="btn-exercices">Faire les exercices ✏️</button>
+        </footer>
+    </div>
+</body>
+</html>
